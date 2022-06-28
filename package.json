@@ -1,0 +1,41 @@
+{
+  "name": "@shiftbeyond/i18nx",
+  "author": "Jörg Goy, Mr. Simply GmbH",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/cli.js",
+  "bin": "lib/cli.js",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/shiftbeyond/i18nx.git"
+    },
+  "scripts": {
+    "build": "babel --copy-files --extensions '.ts' -d ./lib ./src && tsc --emitDeclarationOnly",
+    "changelog": "standard-version --skip.bump --skip.commit --skip.tag",
+    "bump:major": "standard-version --skip.changelog --skip.commit --skip.tag --release-as major",
+    "bump:minor": "standard-version --skip.changelog --skip.commit --skip.tag --release-as minor",
+    "bump:patch": "standard-version --skip.changelog --skip.commit --skip.tag --release-as patch",
+    "release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release": "standard-version",
+    "postinstall-husky": "husky install"
+  },
+  "dependencies": {
+    "yargs": "^17.5.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "latest",
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/preset-typescript": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@types/node": "latest",
+    "@types/yargs": "^17.0.10",
+    "husky": "latest",
+    "standard-version": "latest",
+    "typescript": "latest"
+  }
+}

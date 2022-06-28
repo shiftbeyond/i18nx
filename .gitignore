@@ -1,0 +1,25 @@
+# dependencies
+node_modules
+
+# generated
+build
+dist
+
+# credentials
+.env*
+
+# testing
+**/coverage/*
+
+# proprietary
+*.xlsx
+
+# npm and yarn
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# misc
+.DS_Store
+.vscode
