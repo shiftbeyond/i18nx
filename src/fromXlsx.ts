@@ -10,7 +10,13 @@ const convert = (source: string, destination: string | undefined) => {
       const workbook = XLSX.read(data, { type: 'buffer' });
       const firstSheet = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[firstSheet];
-      const jsonLibrary = XLSX.utils.sheet_to_json(worksheet);
+      const xlsxLibrary: { [key: string]: string }[] =
+        XLSX.utils.sheet_to_json(worksheet);
+      const jsonLibrary: { [key: string]: { [key: string]: string } } = {};
+
+      xlsxLibrary.forEach(({ term, ...translations }) => {
+        jsonLibrary[term] = translations;
+      });
 
       fs.writeFile(
         target,

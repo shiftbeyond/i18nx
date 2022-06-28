@@ -1,16 +1,16 @@
 {
   "name": "@shiftbeyond/i18nx",
   "author": "Jörg Goy, Mr. Simply GmbH",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "lib/cli.js",
   "bin": "lib/cli.js",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/shiftbeyond/i18nx.git"
-    },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shiftbeyond/i18nx.git"
+  },
   "scripts": {
-    "build": "babel --copy-files --extensions '.ts' -d ./lib ./src && tsc --emitDeclarationOnly",
+    "build": "babel --copy-files --extensions '.ts' -d ./lib ./src && chmod +x lib/cli.js",
     "changelog": "standard-version --skip.bump --skip.commit --skip.tag",
     "bump:major": "standard-version --skip.changelog --skip.commit --skip.tag --release-as major",
     "bump:minor": "standard-version --skip.changelog --skip.commit --skip.tag --release-as minor",
